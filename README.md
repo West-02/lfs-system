@@ -18,11 +18,11 @@ A personal custom Linux From Scratch (LFS) system build focused on minimalism, s
 
 1. **Isolated Staging Area (`DESTDIR`):** Packages are built and installed into a temporary staging root at `/tmp/apts-$PKG_NAME` using standard build systems or manual file installation tools.
 
-2. **Metadata Tracking:** All files placed inside the staging area are indexed into a database file at `/var/db/mypkg/packages/<name>-<version>.list` with absolute system paths.
+2. **Metadata Tracking:** All files placed inside the staging area are indexed into a database file at `/var/lib/apts/db/<name>-<version>.list` with absolute system paths.
 
 3. **Target System Merge:** Files are extracted/copied from the staging folder directly into the root filesystem `/`.
 
-4. **Source Archive Storage:** Original source archives are kept in `/var/db/mypkg/archives/` as a source of truth for versioning and database updates.
+4. **Source Archive Storage:** Original source archives are kept in `/var/cache/apts/` as a source of truth for versioning and database updates.
 
 ## 🚀 Realistic `apts` Build & Staging Examples
 
